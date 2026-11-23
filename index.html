@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{компания}} · коттеджный поселок в {{город}}</title>
+<meta name="description" content="Коттеджный поселок «{{компания}}» в {{город}}: участки с проведенными коммуникациями, цена без скрытых доплат, приезжайте на просмотр в любой выходной.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="{{компания}}">
+<meta property="og:title" content="{{компания}} · участки с коммуникациями в {{город}}">
+<meta property="og:description" content="Участки с проведенными коммуникациями, цена без скрытых доплат, просмотр в любой выходной.">
+<meta property="og:url" content="{{адрес сайта}}">
+<meta property="og:image" content="{{адрес сайта}}/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Cpath d=%27M16 4 4 15h4v12h7v-8h2v8h7V15h4z%27 fill=%27%232f6b3c%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vibe.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"{{компания}}","description":"Коттеджный поселок: участки с коммуникациями, цена без скрытых доплат.","url":"{{адрес сайта}}","image":"{{адрес сайта}}/assets/og.jpg","telephone":"{{телефон}}","openingHours":"{{часы}}","address":{"@type":"PostalAddress","streetAddress":"{{адрес}}","addressLocality":"{{город}}","addressCountry":"RU"},"priceRange":"от {{цена}} ₽"}
+</script>
+<style>
+  /* ---- тема: шесть цветов, два шрифта ------------------------------------ */
+  .v-page {
+    --v-canvas: #f4f5f0; --v-surface: #ffffff;
+    --v-ink: #1d221c; --v-ink-soft: #5c665a;
+    --v-accent: #2f6b3c; --v-accent-ink: #f2f7ee;
+    --v-font-display: "Manrope", "Segoe UI", system-ui, sans-serif;
+    --v-font-text: "Golos Text", "Segoe UI", system-ui, sans-serif;
+    --v-shadow-color: 35 45 32;
+    --v-radius: 12px;
+  }
+  html, body { background: #f4f5f0; }
+  .v-page .v-display { line-height: 1.05; }
+  .v-page .v-btn { font-weight: 700; }
+  @media (max-width: 860px) {
+    .hero__tel, .plus p, .uch__meta, .uch__note, .terms, .faq__a, .fin__meta, .foot { font-size: .95rem; }
+    .v-page .v-label { font-size: .9375rem; }
+  }
+
+  /* ---- шапка ---------------------------------------------------------------- */
+  .bar { position: fixed; inset: 0 0 auto 0; z-index: 30; display: flex; align-items: center; justify-content: space-between;
+    padding: var(--v-3) var(--v-gutter); gap: var(--v-4);
+    background: linear-gradient(to bottom, var(--v-canvas-85), transparent);
+    transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out); }
+  .bar.is-scrolled { background: var(--v-canvas-85); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--v-hair); }
+  .bar__mark { font-family: var(--v-font-display); font-weight: 800; font-size: var(--v-t-base); letter-spacing: -.01em; text-decoration: none;
+    display: inline-flex; align-items: center; gap: .55em; min-height: 44px; white-space: nowrap; }
+  .bar__mark i { width: 1.1em; height: 1.1em; display: inline-block; background: var(--v-accent); border-radius: .25em;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 2 12h3v8h6v-5h2v5h6v-8h3z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 2 12h3v8h6v-5h2v5h6v-8h3z'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .bar__tel { text-decoration: none; font-weight: 600; font-size: var(--v-t-sm); color: var(--v-ink); display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--v-2); }
+  .bar__right { display: flex; align-items: center; gap: var(--v-4); }
+  @media (max-width: 700px) {
+    .bar__tel { display: none; }
+    .bar .v-btn { padding: 0 1em; min-height: 44px; font-size: .95rem; }
+  }
+
+  /* ---- плашка «для кого демо» (снимается перед публикацией) ----------------- */
+  .demo-for { position: absolute; z-index: 5; top: clamp(4.5rem, 10vh, 6rem); right: var(--v-gutter); display: inline-flex; align-items: center;
+    gap: .6em; margin: 0; padding: .35em 1em .35em .4em; max-width: 100%; border-radius: 999px;
+    background: rgb(255 255 255 / .92); box-shadow: var(--v-e1), 0 0 0 1px var(--v-hair); font-size: var(--v-t-sm); color: #23282b; }
+  .demo-for img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; }
+  .demo-for span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .demo-for b { color: #1d221c; font-weight: 600; }
+  @media (max-width: 700px) {
+    .demo-for { top: auto; bottom: .75rem; left: var(--v-gutter); right: var(--v-gutter); justify-content: center; }
+    .demo-for span { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  }
+
+  /* ---- hero ------------------------------------------------------------------ */
+  .hero { position: relative; min-height: 100svh; overflow: hidden; color: #f2f7ee; }
+  .hero__img { position: absolute; inset: 0; }
+  .hero__img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero__img::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to right, rgb(20 28 18 / .78) 0%, rgb(20 28 18 / .5) 38%, rgb(20 28 18 / .12) 62%, transparent 100%),
+                linear-gradient(to top, rgb(20 28 18 / .72) 0%, transparent 34%); }
+  .hero__in { position: relative; z-index: 2; max-width: min(46rem, 88vw); padding: clamp(7rem, 20vh, 12rem) 0 clamp(6rem, 14vh, 9rem) var(--v-gutter); display: flex; flex-direction: column; gap: var(--v-5); }
+  .hero__label { color: color-mix(in oklab, #f2f7ee 82%, transparent); }
+  .hero .v-display { font-size: clamp(2.2rem, 1.2rem + 2.8vw, 3.6rem); max-width: 15ch; }
+  .hero__lede { max-width: 44ch; color: color-mix(in oklab, #f2f7ee 86%, transparent); }
+  .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--v-4) var(--v-6); margin-top: var(--v-2); }
+  .hero__tel { color: inherit; text-decoration: none; font-size: var(--v-t-sm); display: inline-flex; align-items: center; min-height: 44px; gap: .35em; }
+  .hero__tel b { font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+  .hero__note { position: absolute; z-index: 2; right: var(--v-gutter); bottom: clamp(1.5rem, 5vh, 3rem); text-align: right; display: grid; gap: .3em; font-size: var(--v-t-sm);
+    color: color-mix(in oklab, #f2f7ee 88%, transparent); }
+  .hero__note b { font-family: var(--v-font-display); font-size: var(--v-t-lg); letter-spacing: -.01em; color: #f2f7ee; }
+  @media (max-width: 860px) {
+    .hero__in { padding-top: 6rem; padding-bottom: 6.5rem; max-width: none; }
+    .hero .v-display { font-size: clamp(1.7rem, 1.1rem + 2.8vw, 2.2rem); }
+    .hero__note { display: none; }
+  }
+
+  /* ---- преимущества ------------------------------------------------------------ */
+  .plus { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--v-5); }
+  .plus li { display: grid; gap: var(--v-3); align-content: start; padding: var(--v-5); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
+  .plus b { font-family: var(--v-font-display); font-size: var(--v-t-lg); letter-spacing: -.01em; }
+  .plus p { color: var(--v-ink-soft); }
+  .plus i { width: 2.4rem; height: 2.4rem; border-radius: .7rem; background: var(--v-accent-10); display: grid; place-items: center; }
+  .plus i svg { width: 1.3rem; height: 1.3rem; stroke: var(--v-accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  @media (max-width: 1000px) { .plus { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .plus { grid-template-columns: 1fr; } }
+
+  /* ---- каталог и фильтр (фирменный ход) ---------------------------------------- */
+  .flt { display: flex; flex-wrap: wrap; gap: var(--v-2) var(--v-3); align-items: center; margin: var(--v-5) 0 var(--v-4); }
+  .flt__group { display: flex; flex-wrap: wrap; gap: var(--v-2); align-items: center; }
+  .flt__group > span { font-size: var(--v-t-xs); text-transform: uppercase; letter-spacing: var(--v-track-wide); color: var(--v-ink-soft); margin-right: var(--v-1); }
+  .flt button { font: inherit; font-size: var(--v-t-sm); font-weight: 500; padding: .5em 1em; min-height: 40px; border-radius: 999px; border: 1px solid var(--v-hair-strong);
+    background: var(--v-surface); color: var(--v-ink); cursor: pointer; transition: background-color .2s var(--v-ease-out), color .2s var(--v-ease-out), border-color .2s var(--v-ease-out); }
+  .flt button[aria-pressed="true"] { background: var(--v-accent); border-color: var(--v-accent); color: var(--v-accent-ink); }
+  .flt__count { margin-left: auto; font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .flt__count b { color: var(--v-ink); }
+  .uch { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--v-5); }
+  .uch li { display: flex; flex-direction: column; border-radius: var(--v-radius); overflow: hidden; background: var(--v-surface); box-shadow: var(--v-e1); }
+  .uch figure { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+  .uch figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--v-ease-out); }
+  .uch li:hover figure img { transform: scale(1.03); }
+  .uch figure span { position: absolute; left: var(--v-3); top: var(--v-3); padding: .35em .8em; border-radius: 999px; background: rgb(255 255 255 / .92); font-size: var(--v-t-xs); font-weight: 600; color: #1d221c; }
+  .uch__body { display: grid; gap: var(--v-2); padding: var(--v-4) var(--v-4) var(--v-5); }
+  .uch__body h3 { font-family: var(--v-font-display); font-size: var(--v-t-lg); letter-spacing: -.01em; }
+  .uch__meta { display: flex; flex-wrap: wrap; gap: var(--v-1) var(--v-4); color: var(--v-ink-soft); font-size: var(--v-t-sm); }
+  .uch__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--v-3); margin-top: var(--v-2); }
+  .uch__price { font-family: var(--v-font-display); font-weight: 800; font-size: var(--v-t-lg); letter-spacing: -.01em; }
+  .uch__price span { display: block; font-family: var(--v-font-text); font-weight: 500; font-size: var(--v-t-xs); color: var(--v-ink-soft); letter-spacing: 0; }
+  .uch__note { margin-top: var(--v-4); font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 56ch; }
+  .uch li.is-hide { display: none; }
+  @media (max-width: 860px) { .uch { grid-template-columns: 1fr; } .flt__count { margin-left: 0; width: 100%; } }
+
+  /* ---- детальная карточка участка ----------------------------------------------- */
+  .det { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: var(--v-7) var(--v-8); align-items: start; }
+  .det__fig { position: sticky; top: calc(var(--v-4) + 3rem); border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2); aspect-ratio: 4 / 3; }
+  .det__fig img { width: 100%; height: 100%; object-fit: cover; }
+  .det__body { display: grid; gap: var(--v-4); }
+  .specs { display: grid; }
+  .specs li { display: grid; grid-template-columns: 11rem 1fr; gap: var(--v-3); padding: var(--v-3) 0; border-top: 1px solid var(--v-hair); font-size: var(--v-t-sm); }
+  .specs li:last-child { border-bottom: 1px solid var(--v-hair); }
+  .specs b { font-weight: 600; }
+  .specs span { color: var(--v-ink-soft); }
+  @media (max-width: 860px) { .det { grid-template-columns: 1fr; } .det__fig { position: relative; top: auto; } .specs li { grid-template-columns: 1fr; gap: var(--v-1); } }
+
+  /* ---- о поселке, условия, faq --------------------------------------------------- */
+  .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--v-7) var(--v-8); align-items: center; }
+  .about__fig { border-radius: var(--v-radius); overflow: hidden; box-shadow: var(--v-e2); aspect-ratio: 16 / 11; }
+  .about__fig img { width: 100%; height: 100%; object-fit: cover; }
+  .about__body { display: grid; gap: var(--v-4); }
+  .infra { display: grid; grid-template-columns: 1fr 1fr; gap: var(--v-2) var(--v-5); margin-top: var(--v-2); }
+  .infra li { display: flex; gap: var(--v-2); align-items: baseline; font-size: var(--v-t-sm); }
+  .infra li::before { content: ""; width: .5em; height: .5em; border-radius: 50%; background: var(--v-accent); flex: none; transform: translateY(-.05em); }
+  .map { margin-top: var(--v-4); border: 1.5px dashed var(--v-hair-strong); border-radius: var(--v-radius); min-height: 11rem; display: grid; place-items: center;
+    text-align: center; padding: var(--v-5); color: var(--v-ink-soft); font-size: var(--v-t-sm); background: color-mix(in oklab, var(--v-canvas) 60%, transparent); }
+  .terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); counter-reset: t; }
+  .terms li { counter-increment: t; display: grid; gap: var(--v-3); align-content: start; padding: var(--v-5); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
+  .terms li::before { content: counter(t, decimal-leading-zero); font-family: var(--v-font-display); font-weight: 800; font-size: var(--v-t-2xl); color: var(--v-accent); line-height: 1; }
+  .terms b { font-family: var(--v-font-display); font-size: var(--v-t-lg); letter-spacing: -.01em; }
+  .terms p { color: var(--v-ink-soft); }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } .terms { grid-template-columns: 1fr; } }
+  .faq { display: grid; gap: var(--v-2); max-width: 52rem; }
+  .faq details { border: 1px solid var(--v-hair); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--v-4);
+    padding: var(--v-4) var(--v-5); font-weight: 600; min-height: 44px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: ""; width: .7em; height: .7em; border-right: 2px solid var(--v-ink-soft); border-bottom: 2px solid var(--v-ink-soft);
+    transform: rotate(45deg) translateY(-.15em); transition: transform .25s var(--v-ease-out); flex: none; }
+  .faq details[open] summary::after { transform: rotate(-135deg) translateY(-.1em); }
+  .faq__a { padding: 0 var(--v-5) var(--v-5); color: var(--v-ink-soft); max-width: 60ch; }
+
+  /* ---- отзывы и контакты ---------------------------------------------------------- */
+  .reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); }
+  .reviews__grid li { display: grid; gap: var(--v-3); align-content: start; padding: var(--v-5); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
+  .reviews__grid p { text-wrap: pretty; }
+  .reviews__grid p + p { font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  @media (max-width: 860px) { .reviews__grid { grid-template-columns: 1fr; } }
+  .fin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--v-7) var(--v-8); align-items: start; }
+  .fin__body { display: grid; gap: var(--v-4); }
+  .fin__meta { display: grid; gap: var(--v-1); color: var(--v-ink-soft); }
+  .fin__meta b { color: var(--v-ink); }
+  .fin__tel { text-decoration: none; font-family: var(--v-font-display); font-weight: 800; font-size: var(--v-t-lg); color: var(--v-ink); display: inline-flex; align-items: center; min-height: 44px; }
+  .form { display: grid; gap: var(--v-3); padding: var(--v-5); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1), var(--v-edge); }
+  .form label { display: grid; gap: var(--v-1); font-size: var(--v-t-sm); font-weight: 500; }
+  .form input, .form select { font: inherit; font-size: var(--v-t-base); padding: .6em .8em; min-height: 44px; border-radius: var(--v-radius); border: 1px solid var(--v-hair-strong); background: var(--v-canvas); color: var(--v-ink); }
+  .form input:focus-visible, .form select:focus-visible { outline: 2px solid var(--v-accent); outline-offset: 1px; }
+  .form small { color: var(--v-ink-soft); }
+  @media (max-width: 860px) { .fin { grid-template-columns: 1fr; } }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--v-2) var(--v-5); padding: var(--v-5) 0 var(--v-6); border-top: 1px solid var(--v-hair); color: var(--v-ink-soft); }
+</style>
+</head>
+<body>
+<div class="v-page">
+
+  <header class="bar">
+    <a class="bar__mark" href="#top"><i aria-hidden="true"></i>{{компания}}</a>
+    <nav class="bar__right" aria-label="Быстрые ссылки">
+      <a class="bar__tel" href="tel:{{телефон}}">{{телефон}}</a>
+      <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подобрать участок</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- 1 · HERO: оффер на фоне поселка, одна кнопка на весь сайт -->
+    <section id="top" data-v-act="flow" data-v-drift="#f4f5f0" aria-label="Коттеджный поселок">
+      <div class="hero">
+        <div class="hero__img">
+          <img src="assets/hero.webp" alt="Вид на коттеджный поселок: улица с готовыми домами на зеленых участках" width="1920" height="1080" fetchpriority="high">
+        </div>
+        <p class="demo-for"><img src="assets/zakazchik.jpg" alt="" width="40" height="40"><span>Демо для <b>turidei</b> · по заказу «Сайт о коттеджных поселках»</span></p>
+        <div class="hero__in" data-v-in data-v-stagger="80">
+          <span class="v-label hero__label">Коттеджный поселок · {{город}}</span>
+          <h1 class="v-display v-display--xl" data-v-kinetic="lines">Участки с коммуникациями в {{город}}</h1>
+          <p class="v-lede hero__lede">Свет, дорога и подъезд проведены к каждому участку. Цена фиксируется в договоре и не растёт после подписания. Приезжайте смотреть в любой выходной.</p>
+          <div class="hero__cta">
+            <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подобрать участок</a>
+            <a class="hero__tel" href="tel:{{телефон}}">или позвоните <b>{{телефон}}</b></a>
+          </div>
+        </div>
+        <div class="hero__note" data-v-in data-v-in-self>
+          <span class="v-label">Просмотр участков</span>
+          <b>{{часы}}</b>
+          <span>по предварительному звонку</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · ПРЕИМУЩЕСТВА -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="plus" aria-label="Преимущества поселка">
+      <div class="v-wrap">
+        <div class="v-label" data-v-in>Поселок</div>
+        <h2 class="v-display v-display--lg" data-v-in>Что уже сделано, а не «будет потом»</h2>
+        <ul class="plus" data-v-in data-v-stagger="70" style="margin-top: var(--v-5)">
+          <li>
+            <i><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></i>
+            <b>Свет к участку</b>
+            <p>Электричество подведено к границе каждого участка - технические условия и мощность уточним по схеме.</p>
+          </li>
+          <li>
+            <i><svg viewBox="0 0 24 24"><path d="M3 17h18M5 17l2-7h10l2 7M9 10V7a3 3 0 0 1 6 0v3"/></svg></i>
+            <b>Дороги и подъезд</b>
+            <p>Центральная улица заасфальтирована, к каждому участку есть проезд. Добрать можно на обычной легковой.</p>
+          </li>
+          <li>
+            <i><svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3z"/></svg></i>
+            <b>Живут соседи</b>
+            <p>Часть домов уже построена и заселена: посмотрите готовые участки вокруг, прежде чем выбирать свой.</p>
+          </li>
+          <li>
+            <i><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-7-10a7 7 0 0 1 14 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></i>
+            <b>15 минут до города</b>
+            <p>Школа, поликлиника и магазины - в {{город}}, дорога займёт около пятнадцати минут. Точное время посчитайте по карте от своего участка.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 · КАТАЛОГ: фильтр по цене и площади - фирменный ход -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="uchastki" aria-label="Каталог участков">
+      <div class="v-wrap">
+        <div class="v-label" data-v-in>Каталог</div>
+        <h2 class="v-display v-display--lg" data-v-in>Свободные участки</h2>
+        <p class="v-body v-soft" data-v-in style="max-width: 56ch">Цены ниже - пример для демо, ставим прайс заказчика. Отметьте подходящие - и напишите нам, забронируем на три дня бесплатно.</p>
+
+        <div class="flt" data-v-in>
+          <div class="flt__group" role="group" aria-label="Фильтр по цене">
+            <span>Цена</span>
+            <button type="button" data-f="price" data-v="all" aria-pressed="true">Любая</button>
+            <button type="button" data-f="price" data-v="do25" aria-pressed="false">до 2,5 млн</button>
+            <button type="button" data-f="price" data-v="25-35" aria-pressed="false">2,5 - 3,5 млн</button>
+            <button type="button" data-f="price" data-v="ot35" aria-pressed="false">от 3,5 млн</button>
+          </div>
+          <div class="flt__group" role="group" aria-label="Фильтр по площади">
+            <span>Площадь</span>
+            <button type="button" data-f="size" data-v="all" aria-pressed="true">Любая</button>
+            <button type="button" data-f="size" data-v="s8" aria-pressed="false">от 8 соток</button>
+            <button type="button" data-f="size" data-v="s12" aria-pressed="false">от 12 соток</button>
+          </div>
+          <p class="flt__count" aria-live="polite">Подобрано: <b id="flt-count">4</b> из 4</p>
+        </div>
+
+        <ul class="uch" id="uch-list" data-v-in data-v-stagger="60">
+          <li data-price="do25" data-size="s8">
+            <figure><img src="assets/uch-1.webp" srcset="assets/uch-1-800.webp 800w, assets/uch-1.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Ровный участок на опушке соснового леса с красными граничными столбиками" width="1200" height="900" loading="lazy" decoding="async"><span>У леса</span></figure>
+            <div class="uch__body">
+              <h3>Участок 12</h3>
+              <div class="uch__meta"><span>8 соток</span><span>свет у границы</span><span>лес за забором</span></div>
+              <div class="uch__row">
+                <p class="uch__price">1 850 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+              </div>
+            </div>
+          </li>
+          <li data-price="25-35" data-size="s8">
+            <figure><img src="assets/uch-2.webp" srcset="assets/uch-2-800.webp 800w, assets/uch-2.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Открытый участок на опушке с молодыми берёзами по границе" width="1200" height="900" loading="lazy" decoding="async"><span>На опушке</span></figure>
+            <div class="uch__body">
+              <h3>Участок 27</h3>
+              <div class="uch__meta"><span>10 соток</span><span>свет у границы</span><span>открытый вид</span></div>
+              <div class="uch__row">
+                <p class="uch__price">2 650 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+              </div>
+            </div>
+          </li>
+          <li data-price="25-35" data-size="s12">
+            <figure><img src="assets/uch-3.webp" srcset="assets/uch-3-800.webp 800w, assets/uch-3.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Участок у небольшого озера с причалом на соседнем участке" width="1200" height="900" loading="lazy" decoding="async"><span>У воды</span></figure>
+            <div class="uch__body">
+              <h3>Участок 41</h3>
+              <div class="uch__meta"><span>12 соток</span><span>свет у границы</span><span>выход к озеру</span></div>
+              <div class="uch__row">
+                <p class="uch__price">3 200 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+              </div>
+            </div>
+          </li>
+          <li data-price="ot35" data-size="s12">
+            <figure><img src="assets/uch-4.webp" srcset="assets/uch-4-800.webp 800w, assets/uch-4.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Участок в середине поселка на улице с построенными домами" width="1200" height="900" loading="lazy" decoding="async"><span>В центре</span></figure>
+            <div class="uch__body">
+              <h3>Участок 8</h3>
+              <div class="uch__meta"><span>15 соток</span><span>свет у границы</span><span>асфальт у участка</span></div>
+              <div class="uch__row">
+                <p class="uch__price">4 600 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="uch__note" data-v-in>Не нашли подходящий - напишите бюджет и желаемую площадь, пришлём варианты, которые ещё не выставлены.</p>
+      </div>
+    </section>
+
+    <!-- 4 · ДЕТАЛЬНАЯ УЧАСТКА -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="uchastok-12" aria-label="Участок 12: подробно">
+      <div class="v-wrap">
+        <div class="det">
+          <figure class="det__fig" data-v-reveal="left" data-v-reveal-at="0.1 0.45">
+            <img src="assets/uch-1.webp" srcset="assets/uch-1-800.webp 800w, assets/uch-1.webp 1200w" sizes="(max-width: 860px) 100vw, 44rem" alt="Участок 12: ровная поляна на опушке соснового леса" width="1200" height="900" loading="lazy" decoding="async">
+          </figure>
+          <div class="det__body">
+            <div>
+              <span class="v-label">Участок 12 · пример карточки</span>
+              <h2 class="v-display v-display--md" style="margin-top: var(--v-3)">8 соток на опушке леса</h2>
+            </div>
+            <p class="v-body v-soft">Прямоугольный, ровный участок. Сосновый лес начинается за границей - тень летом и никакой грязи весной. Соседи с двух сторон уже построились.</p>
+            <ul class="specs">
+              <li><b>Площадь</b><span>8 соток, 20 × 40 м, без уклона</span></li>
+              <li><b>Коммуникации</b><span>электричество 15 кВт у границы; скважина и септик - на участке</span></li>
+              <li><b>Подъезд</b><span>асфальт до участка, зимой чистят в первую очередь</span></li>
+              <li><b>Инфраструктура</b><span>школа и магазины в {{город}}, ~15 минут на машине</span></li>
+              <li><b>Документы</b><span>собственность, межевание выполнено, кадастр: {{кадастровый номер}}</span></li>
+            </ul>
+            <div class="uch__row">
+              <p class="uch__price">1 850 000 ₽<span>цена фиксируется в договоре</span></p>
+              <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Записаться на просмотр</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · О ПОСЕЛКЕ -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="poselok" aria-label="О поселке">
+      <div class="v-wrap">
+        <div class="about">
+          <div class="about__body">
+            <div>
+              <span class="v-label">О поселке</span>
+              <h2 class="v-display v-display--md" style="margin-top: var(--v-3)">{{компания}} - посёлок, где уже живут</h2>
+            </div>
+            <p class="v-body v-soft">Планировка - кварталами, без «спального района» плотности: широкие улицы, свет вдоль дорог, общая зона отдыха у пруда. Каждый участок огорожен по границе - границы видны до покупки, не «на словах».</p>
+            <ul class="infra" data-v-in data-v-stagger="50">
+              <li>детская площадка у пруда</li>
+              <li>общая зона для барбекю</li>
+              <li>освещение центральной улицы</li>
+              <li>сезонный магазин у въезда</li>
+              <li>остановка маршрута до {{город}}</li>
+              <li>соседский чат и старший по посёлку</li>
+            </ul>
+            <div class="map" data-v-in><span>Карта поселка и схема участков -<br>сюда встаит {{карта}} от заказчика</span></div>
+          </div>
+          <figure class="about__fig" data-v-reveal="right" data-v-reveal-at="0.1 0.45">
+            <img src="assets/about.webp" srcset="assets/about-900.webp 900w, assets/about.webp 1600w" sizes="(max-width: 860px) 100vw, 44rem" alt="Центральная улица поселка с тротуаром и домами по сторонам" width="1600" height="1100" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · УСЛОВИЯ ПОКУПКИ -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="usloviya" aria-label="Условия покупки">
+      <div class="v-wrap">
+        <span class="v-label" data-v-in>Как купить</span>
+        <h2 class="v-display v-display--lg" data-v-in>Условия покупки без сюрпризов</h2>
+        <ol class="terms" data-v-in data-v-stagger="70" style="margin-top: var(--v-5)">
+          <li>
+            <b>Приезжаете смотреть</b>
+            <p>Бронируем день, показываем участок и границы, даём схему с коммуникациями. Без предоплаты и «только сегодня».</p>
+          </li>
+          <li>
+            <b>Фиксируем цену</b>
+            <p>Цена из прайса фиксируется в договоре купли-продажи. Доплат «за оформление» и «за бронь» у нас нет.</p>
+          </li>
+          <li>
+            <b>Оформляем сделку</b>
+            <p>Сопровождаем сделку у нотариуса или через МФЦ, помогаем с ипотекой на землю, если она нужна.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7 · FAQ -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="faq" aria-label="Вопросы и ответы">
+      <div class="v-wrap">
+        <span class="v-label" data-v-in>FAQ</span>
+        <h2 class="v-display v-display--lg" data-v-in>Частые вопросы</h2>
+        <div class="faq" data-v-in data-v-stagger="50" style="margin-top: var(--v-5)">
+          <details>
+            <summary>Цена на сайте окончательная?</summary>
+            <p class="faq__a">Да. Цена фиксируется в договоре в том виде, в котором её назвали при бронировании. Скрытых платежей за оформление или «инфраструктуру» нет.</p>
+          </details>
+          <details>
+            <summary>Можно ли приехать посмотреть до бронирования?</summary>
+            <p class="faq__a">Можно и нужно. Просмотр бесплатный, занимает около часа. Позвоните заранее - встретим у въезда в посёлок и покажем все свободные варианты.</p>
+          </details>
+          <details>
+            <summary>Какие коммуникации уже есть?</summary>
+            <p class="faq__a">Электричество подведено к границе каждого участка. Водоснабжение - скважина на участке, канализация - локальный септик: поможем с проверенными бригадами, если строитесь у нас.</p>
+          </details>
+          <details>
+            <summary>Есть ли охрана и зимняя уборка?</summary>
+            <p class="faq__a">Центральная улица освещена и чистится зимой. Вопросы охраны и обслуживания решаются общим сбором собственников - подробности уточним при просмотре.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 · ОТЗЫВЫ (только настоящие, слоты; нет отзывов - секция убирается) -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="otzyvy" data-slot-optional aria-label="Отзывы покупателей">
+      <div class="v-wrap">
+        <span class="v-label" data-v-in>Отзывы</span>
+        <h2 class="v-display v-display--lg" data-v-in>Что говорят купившие</h2>
+        <ul class="reviews__grid" data-v-in data-v-stagger="70" style="margin-top: var(--v-5)">
+          <li><p>«{{отзыв 1}}»</p><p><b>{{имя 1}}</b> · {{когда 1}}</p></li>
+          <li><p>«{{отзыв 2}}»</p><p><b>{{имя 2}}</b> · {{когда 2}}</p></li>
+          <li><p>«{{отзыв 3}}»</p><p><b>{{имя 3}}</b> · {{когда 3}}</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 9 · КОНТАКТЫ -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="kontakty" aria-label="Контакты">
+      <div class="v-wrap">
+        <div class="fin">
+          <div class="fin__body" data-v-in data-v-stagger="70">
+            <span class="v-label">Контакты</span>
+            <h2 class="v-display v-display--md">Приезжайте смотреть участки</h2>
+            <p class="v-body v-soft">Офис продаж - у въезда в посёлок. Перед выездом позвоните - встретим и покажем все свободные варианты за один раз.</p>
+            <div class="fin__meta">
+              <span><b>Адрес</b> {{адрес}}, {{город}}</span>
+              <span><b>Часы просмотров</b> {{часы}}, по предварительному звонку</span>
+            </div>
+            <a class="fin__tel" href="tel:{{телефон}}">{{телефон}}</a>
+            <div class="hero__cta">
+              <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подобрать участок</a>
+            </div>
+          </div>
+          <form class="form" data-v-in data-v-in-self onsubmit="return false" aria-label="Заявка на просмотр">
+            <b class="v-display v-display--sm" style="font-size: var(--v-t-lg)">Заявка на просмотр</b>
+            <label>Имя<input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
+            <label>Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
+            <label>Что ищете<select name="wish"><option>Участок до 2,5 млн</option><option>Участок 2,5 - 3,5 млн</option><option>Участок от 3,5 млн</option><option>Просто посмотреть посёлок</option></select></label>
+            <button class="v-btn" type="submit" onclick="window.open('{{ссылка-заявки}}','_blank')">Отправить заявку</button>
+            <small>Нажимая «Отправить заявку», вы переходите в мессенджер - там продолжим разговор. Или просто позвоните: {{телефон}}.</small>
+          </form>
+        </div>
+        <footer class="foot">
+          <span>{{компания}} · {{город}}</span>
+          <span data-slot-optional>{{юрлицо}} · ИНН {{ИНН}}</span>
+          <span>Продажа участков в коттеджном посёлке</span>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="vibe.js"></script>
+<script>
+  Vibe.mount(document.querySelector('.v-page'));
+
+  // Шапка: подложка после 40 px прокрутки.
+  (function () {
+    var bar = document.querySelector('.bar'), on = null;
+    function tick() { var s = window.scrollY > 40; if (s !== on) { on = s; bar.classList.toggle('is-scrolled', s); } }
+    window.addEventListener('scroll', tick, { passive: true }); tick();
+  })();
+
+  // Фирменный ход «подобрать участок»: фильтр каталога по цене и площади.
+  (function () {
+    var state = { price: 'all', size: 'all' };
+    var cards = Array.prototype.slice.call(document.querySelectorAll('#uch-list > li'));
+    var count = document.getElementById('flt-count');
+    var match = {
+      price: function (v, p) { return p === 'all' || p === v; },
+      size: function (v, s) {
+        if (s === 'all') return true;
+        var n = parseFloat(v.replace(',', '.')) || 0;
+        return s === 's8' ? n >= 8 : n >= 12;
+      }
+    };
+    // площадь храним в сотках: берём из подписи «N соток» в .uch__meta
+    cards.forEach(function (li) {
+      var m = (li.querySelector('.uch__meta span') || {}).textContent || '';
+      li.dataset.sizeV = (m.match(/(\d+[.,]?\d*)/) || [0, '0'])[1];
+    });
+    function apply() {
+      var shown = 0;
+      cards.forEach(function (li) {
+        var ok = match.price(li.dataset.price, state.price) && match.size(li.dataset.sizeV, state.size);
+        li.classList.toggle('is-hide', !ok);
+        if (ok) shown++;
+      });
+      count.textContent = shown;
+    }
+    document.querySelectorAll('.flt button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        state[btn.dataset.f] = btn.dataset.v;
+        document.querySelectorAll('.flt button[data-f="' + btn.dataset.f + '"]').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        apply();
+      });
+    });
+    apply();
+  })();
+</script>
+</body>
+</html>
