@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Посёлок «Сосновый берег» · участки с коммуникациями у Истры</title>
 <meta name="description" content="Коттеджные посёлки «Сосновый берег», «Берёзовая опушка» и «Озёрный» в Истринском районе: участки с проведёнными коммуникациями, цена без скрытых доплат, просмотр в любой выходной.">
@@ -186,7 +187,7 @@
     <a class="bar__mark" href="#top"><i aria-hidden="true"></i>«Сосновый берег»</a>
     <nav class="bar__right" aria-label="Быстрые ссылки">
       <a class="bar__tel" href="tel:+74951234567">+7 (495) 123-45-67</a>
-      <a class="v-btn" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA%20%D0%B2%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BA%D0%B5" target="_blank" rel="noopener">Подобрать участок</a>
+      <a class="v-btn" href="#kontakty">Подобрать участок</a>
     </nav>
   </header>
 
@@ -203,7 +204,7 @@
           <h1 class="v-display v-display--xl" data-v-kinetic="lines">Участки с коммуникациями в посёлках у Истры</h1>
           <p class="v-lede hero__lede">Свет, дороги и подъезд проведены к каждому участку. Цена фиксируется в договоре и не растёт после подписания. Приезжайте смотреть в любой выходной - покажем все посёлки за один день.</p>
           <div class="hero__cta">
-            <a class="v-btn" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA%20%D0%B2%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BA%D0%B5" target="_blank" rel="noopener">Подобрать участок</a>
+            <a class="v-btn" href="#kontakty">Подобрать участок</a>
             <a class="hero__tel" href="tel:+74951234567">или позвоните <b>+7 (495) 123-45-67</b></a>
           </div>
         </div>
@@ -445,6 +446,7 @@
             <label>Имя<input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
             <label>Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
             <label>Что ищете<select name="wish"><option>Участок до 2,5 млн</option><option>Участок 2,5 - 3,5 млн</option><option>Участок от 3,5 млн</option><option>Просто посмотреть посёлок</option></select></label>
+            <label>Площадь участка<select name="size"><option>Любая</option><option>От 8 соток</option><option>От 10 соток</option></select></label>
             <button class="v-btn" type="submit" onclick="window.open('https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BA%D0%BE%D0%B2','_blank')">Отправить заявку</button>
             <small>Нажимая «Отправить заявку», вы переходите в WhatsApp - там продолжим разговор. Или просто позвоните: +7 (495) 123-45-67.</small>
           </form>
@@ -506,6 +508,36 @@
       });
     });
     apply();
+  })();
+
+  // Двусторонняя синхронизация формы заявки и фильтра каталога.
+  (function () {
+    var wishMap = ['do25', '25-35', 'ot35', 'all'];
+    var wishBack = { all: 3, do25: 0, '25-35': 1, ot35: 2 };
+    var sizeMap = ['all', 's8', 's10'];
+    var sizeBack = { all: 0, s8: 1, s10: 2 };
+    function press(group, value) {
+      var btn = document.querySelector('.flt button[data-f="' + group + '"][data-v="' + value + '"]');
+      if (btn) btn.click();
+    }
+    var form = document.querySelector('.form');
+    form.elements.wish.addEventListener('change', function () {
+      press('price', wishMap[this.selectedIndex] || 'all');
+    });
+    form.elements.size.addEventListener('change', function () {
+      press('size', sizeMap[this.selectedIndex] || 'all');
+    });
+    // Обратная сторона: клик по фильтру каталога обновляет selects формы.
+    // «Любая» цена соответствует «Просто посмотреть посёлок», «Любая» площадь - «Любая».
+    document.querySelectorAll('.flt button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var el = btn.dataset.f === 'price' ? form.elements.wish : form.elements.size;
+        var idx = btn.dataset.f === 'price'
+          ? (wishBack[btn.dataset.v] !== undefined ? wishBack[btn.dataset.v] : 0)
+          : (sizeBack[btn.dataset.v] !== undefined ? sizeBack[btn.dataset.v] : 0);
+        el.selectedIndex = idx;
+      });
+    });
   })();
 </script>
 </body>
