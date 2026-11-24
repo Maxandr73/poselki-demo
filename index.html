@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow" data-publish>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{{компания}} · коттеджный поселок в {{город}}</title>
-<meta name="description" content="Коттеджный поселок «{{компания}}» в {{город}}: участки с проведенными коммуникациями, цена без скрытых доплат, приезжайте на просмотр в любой выходной.">
+<title>Посёлок «Сосновый берег» · участки с коммуникациями у Истры</title>
+<meta name="description" content="Коттеджные посёлки «Сосновый берег», «Берёзовая опушка» и «Озёрный» в Истринском районе: участки с проведёнными коммуникациями, цена без скрытых доплат, просмотр в любой выходной.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="{{компания}}">
-<meta property="og:title" content="{{компания}} · участки с коммуникациями в {{город}}">
-<meta property="og:description" content="Участки с проведенными коммуникациями, цена без скрытых доплат, просмотр в любой выходной.">
-<meta property="og:url" content="{{адрес сайта}}">
-<meta property="og:image" content="{{адрес сайта}}/assets/og.jpg">
+<meta property="og:site_name" content="Посёлок «Сосновый берег»">
+<meta property="og:title" content="Участки с коммуникациями в посёлках у Истры">
+<meta property="og:description" content="Свет, дороги и подъезд проведены. Цена фиксируется в договоре. Приезжайте смотреть в любой выходной.">
+<meta property="og:url" content="https://maxandr73.github.io/poselki-demo/">
+<meta property="og:image" content="https://maxandr73.github.io/poselki-demo/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Cpath d=%27M16 4 4 15h4v12h7v-8h2v8h7V15h4z%27 fill=%27%232f6b3c%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="vibe.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"RealEstateAgent","name":"{{компания}}","description":"Коттеджный поселок: участки с коммуникациями, цена без скрытых доплат.","url":"{{адрес сайта}}","image":"{{адрес сайта}}/assets/og.jpg","telephone":"{{телефон}}","openingHours":"{{часы}}","address":{"@type":"PostalAddress","streetAddress":"{{адрес}}","addressLocality":"{{город}}","addressCountry":"RU"},"priceRange":"от {{цена}} ₽"}
+{"@context":"https://schema.org","@type":"RealEstateAgent","name":"Посёлок «Сосновый берег»","description":"Коттеджные посёлки в Истринском районе: участки с коммуникациями, цена без скрытых доплат.","url":"https://maxandr73.github.io/poselki-demo/","image":"https://maxandr73.github.io/poselki-demo/assets/og.jpg","telephone":"+7 (495) 123-45-67","openingHours":"Sa-Su 10:00-18:00","address":{"@type":"PostalAddress","streetAddress":"посёлок «Сосновый берег», офис продаж у въезда","addressLocality":"Истринский район, Московская область","addressCountry":"RU"},"priceRange":"от 1 850 000 ₽"}
 </script>
 <style>
   /* ---- тема: шесть цветов, два шрифта ------------------------------------ */
@@ -57,19 +57,8 @@
   .bar__right { display: flex; align-items: center; gap: var(--v-4); }
   @media (max-width: 700px) {
     .bar__tel { display: none; }
-    .bar .v-btn { padding: 0 1em; min-height: 44px; font-size: .95rem; }
-  }
-
-  /* ---- плашка «для кого демо» (снимается перед публикацией) ----------------- */
-  .demo-for { position: absolute; z-index: 5; top: clamp(4.5rem, 10vh, 6rem); right: var(--v-gutter); display: inline-flex; align-items: center;
-    gap: .6em; margin: 0; padding: .35em 1em .35em .4em; max-width: 100%; border-radius: 999px;
-    background: rgb(255 255 255 / .92); box-shadow: var(--v-e1), 0 0 0 1px var(--v-hair); font-size: var(--v-t-sm); color: #23282b; }
-  .demo-for img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; }
-  .demo-for span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .demo-for b { color: #1d221c; font-weight: 600; }
-  @media (max-width: 700px) {
-    .demo-for { top: auto; bottom: .75rem; left: var(--v-gutter); right: var(--v-gutter); justify-content: center; }
-    .demo-for span { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .bar__mark { font-size: .95rem; }
+    .bar .v-btn { padding: 0 .8em; min-height: 44px; font-size: .9rem; }
   }
 
   /* ---- hero ------------------------------------------------------------------ */
@@ -114,7 +103,7 @@
   .flt button[aria-pressed="true"] { background: var(--v-accent); border-color: var(--v-accent); color: var(--v-accent-ink); }
   .flt__count { margin-left: auto; font-size: var(--v-t-sm); color: var(--v-ink-soft); }
   .flt__count b { color: var(--v-ink); }
-  .uch { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--v-5); }
+  .uch { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); }
   .uch li { display: flex; flex-direction: column; border-radius: var(--v-radius); overflow: hidden; background: var(--v-surface); box-shadow: var(--v-e1); }
   .uch figure { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
   .uch figure img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--v-ease-out); }
@@ -150,8 +139,9 @@
   .infra { display: grid; grid-template-columns: 1fr 1fr; gap: var(--v-2) var(--v-5); margin-top: var(--v-2); }
   .infra li { display: flex; gap: var(--v-2); align-items: baseline; font-size: var(--v-t-sm); }
   .infra li::before { content: ""; width: .5em; height: .5em; border-radius: 50%; background: var(--v-accent); flex: none; transform: translateY(-.05em); }
-  .map { margin-top: var(--v-4); border: 1.5px dashed var(--v-hair-strong); border-radius: var(--v-radius); min-height: 11rem; display: grid; place-items: center;
-    text-align: center; padding: var(--v-5); color: var(--v-ink-soft); font-size: var(--v-t-sm); background: color-mix(in oklab, var(--v-canvas) 60%, transparent); }
+  .howget { margin-top: var(--v-4); border: 1px solid var(--v-hair); border-radius: var(--v-radius); padding: var(--v-4) var(--v-5); background: var(--v-surface); box-shadow: var(--v-e1); }
+  .howget b { font-family: var(--v-font-display); font-size: var(--v-t-base); }
+  .howget p { margin-top: var(--v-2); color: var(--v-ink-soft); font-size: var(--v-t-sm); max-width: 52ch; }
   .terms { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); counter-reset: t; }
   .terms li { counter-increment: t; display: grid; gap: var(--v-3); align-content: start; padding: var(--v-5); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
   .terms li::before { content: counter(t, decimal-leading-zero); font-family: var(--v-font-display); font-weight: 800; font-size: var(--v-t-2xl); color: var(--v-accent); line-height: 1; }
@@ -168,12 +158,14 @@
   .faq details[open] summary::after { transform: rotate(-135deg) translateY(-.1em); }
   .faq__a { padding: 0 var(--v-5) var(--v-5); color: var(--v-ink-soft); max-width: 60ch; }
 
-  /* ---- отзывы и контакты ---------------------------------------------------------- */
-  .reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--v-5); }
-  .reviews__grid li { display: grid; gap: var(--v-3); align-content: start; padding: var(--v-5); border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
-  .reviews__grid p { text-wrap: pretty; }
-  .reviews__grid p + p { font-size: var(--v-t-sm); color: var(--v-ink-soft); }
-  @media (max-width: 860px) { .reviews__grid { grid-template-columns: 1fr; } }
+  /* ---- менеджер ------------------------------------------------------------------- */
+  .mgr { display: flex; gap: var(--v-4); align-items: center; margin-top: var(--v-3); padding: var(--v-4); border: 1px solid var(--v-hair);
+    border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1); }
+  .mgr img { width: 4.5rem; height: 4.5rem; border-radius: 50%; object-fit: cover; flex: none; }
+  .mgr div { display: grid; gap: .15em; font-size: var(--v-t-sm); color: var(--v-ink-soft); }
+  .mgr b { font-family: var(--v-font-display); font-size: var(--v-t-base); color: var(--v-ink); }
+
+  /* ---- контакты ------------------------------------------------------------------- */
   .fin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--v-7) var(--v-8); align-items: start; }
   .fin__body { display: grid; gap: var(--v-4); }
   .fin__meta { display: grid; gap: var(--v-1); color: var(--v-ink-soft); }
@@ -192,75 +184,74 @@
 <div class="v-page">
 
   <header class="bar">
-    <a class="bar__mark" href="#top"><i aria-hidden="true"></i>{{компания}}</a>
+    <a class="bar__mark" href="#top"><i aria-hidden="true"></i>«Сосновый берег»</a>
     <nav class="bar__right" aria-label="Быстрые ссылки">
-      <a class="bar__tel" href="tel:{{телефон}}">{{телефон}}</a>
-      <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подобрать участок</a>
+      <a class="bar__tel" href="tel:+74951234567">+7 (495) 123-45-67</a>
+      <a class="v-btn" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA%20%D0%B2%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BA%D0%B5" target="_blank" rel="noopener">Подобрать участок</a>
     </nav>
   </header>
 
   <main>
 
-    <!-- 1 · HERO: оффер на фоне поселка, одна кнопка на весь сайт -->
-    <section id="top" data-v-act="flow" data-v-drift="#f4f5f0" aria-label="Коттеджный поселок">
+    <!-- 1 · HERO -->
+    <section id="top" data-v-act="flow" data-v-drift="#f4f5f0" aria-label="Коттеджные посёлки у Истры">
       <div class="hero">
         <div class="hero__img">
-          <img src="assets/hero.webp" alt="Вид на коттеджный поселок: улица с готовыми домами на зеленых участках" width="1920" height="1080" fetchpriority="high">
+          <img src="assets/hero.webp" alt="Вид на коттеджный посёлок: улица с готовыми домами на зелёных участках" width="1920" height="1080" fetchpriority="high">
         </div>
-        <p class="demo-for"><img src="assets/zakazchik.jpg" alt="" width="40" height="40"><span>Демо для <b>turidei</b> · по заказу «Сайт о коттеджных поселках»</span></p>
         <div class="hero__in" data-v-in data-v-stagger="80">
-          <span class="v-label hero__label">Коттеджный поселок · {{город}}</span>
-          <h1 class="v-display v-display--xl" data-v-kinetic="lines">Участки с коммуникациями в {{город}}</h1>
-          <p class="v-lede hero__lede">Свет, дорога и подъезд проведены к каждому участку. Цена фиксируется в договоре и не растёт после подписания. Приезжайте смотреть в любой выходной.</p>
+          <span class="v-label hero__label">Три посёлка · Истринский район</span>
+          <h1 class="v-display v-display--xl" data-v-kinetic="lines">Участки с коммуникациями в посёлках у Истры</h1>
+          <p class="v-lede hero__lede">Свет, дороги и подъезд проведены к каждому участку. Цена фиксируется в договоре и не растёт после подписания. Приезжайте смотреть в любой выходной - покажем все посёлки за один день.</p>
           <div class="hero__cta">
-            <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подобрать участок</a>
-            <a class="hero__tel" href="tel:{{телефон}}">или позвоните <b>{{телефон}}</b></a>
+            <a class="v-btn" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA%20%D0%B2%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BA%D0%B5" target="_blank" rel="noopener">Подобрать участок</a>
+            <a class="hero__tel" href="tel:+74951234567">или позвоните <b>+7 (495) 123-45-67</b></a>
           </div>
         </div>
         <div class="hero__note" data-v-in data-v-in-self>
           <span class="v-label">Просмотр участков</span>
-          <b>{{часы}}</b>
+          <b>сб-вс, 10:00-18:00</b>
           <span>по предварительному звонку</span>
         </div>
       </div>
     </section>
 
     <!-- 2 · ПРЕИМУЩЕСТВА -->
-    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="plus" aria-label="Преимущества поселка">
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="plus" aria-label="Преимущества посёлков">
       <div class="v-wrap">
-        <div class="v-label" data-v-in>Поселок</div>
+        <div class="v-label" data-v-in>Посёлки</div>
         <h2 class="v-display v-display--lg" data-v-in>Что уже сделано, а не «будет потом»</h2>
         <ul class="plus" data-v-in data-v-stagger="70" style="margin-top: var(--v-5)">
           <li>
             <i><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></i>
             <b>Свет к участку</b>
-            <p>Электричество подведено к границе каждого участка - технические условия и мощность уточним по схеме.</p>
+            <p>Электричество подведено к границе каждого участка - мощность и техусловия покажем по схеме посёлка.</p>
           </li>
           <li>
             <i><svg viewBox="0 0 24 24"><path d="M3 17h18M5 17l2-7h10l2 7M9 10V7a3 3 0 0 1 6 0v3"/></svg></i>
             <b>Дороги и подъезд</b>
-            <p>Центральная улица заасфальтирована, к каждому участку есть проезд. Добрать можно на обычной легковой.</p>
+            <p>Центральные улицы заасфальтированы, к каждому участку есть проезд. Доехать можно на обычной легковой.</p>
           </li>
           <li>
             <i><svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-5h2v5h6v-8h3z"/></svg></i>
             <b>Живут соседи</b>
-            <p>Часть домов уже построена и заселена: посмотрите готовые участки вокруг, прежде чем выбирать свой.</p>
+            <p>В каждом посёлке часть домов построена и заселена: посмотрите готовые участки вокруг, прежде чем выбирать свой.</p>
           </li>
           <li>
             <i><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.6-7-10a7 7 0 0 1 14 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg></i>
-            <b>15 минут до города</b>
-            <p>Школа, поликлиника и магазины - в {{город}}, дорога займёт около пятнадцати минут. Точное время посчитайте по карте от своего участка.</p>
+            <b>15 минут до Истры</b>
+            <p>Школа, поликлиника и магазины - в Истре, дорога займёт около пятнадцати минут. Точное время посчитайте по карте от своего участка.</p>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- 3 · КАТАЛОГ: фильтр по цене и площади - фирменный ход -->
-    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="uchastki" aria-label="Каталог участков">
+    <!-- 3 · КАТАЛОГ: три посёлка, фильтр по цене и площади -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="poselki" aria-label="Посёлки и цены">
       <div class="v-wrap">
         <div class="v-label" data-v-in>Каталог</div>
-        <h2 class="v-display v-display--lg" data-v-in>Свободные участки</h2>
-        <p class="v-body v-soft" data-v-in style="max-width: 56ch">Цены ниже - пример для демо, ставим прайс заказчика. Отметьте подходящие - и напишите нам, забронируем на три дня бесплатно.</p>
+        <h2 class="v-display v-display--lg" data-v-in>Три посёлка - выбирайте характер</h2>
+        <p class="v-body v-soft" data-v-in style="max-width: 56ch">Цены ниже - за участок в собственность, межевание выполнено. Отметьте подходящий и напишите нам - забронируем участок на три дня бесплатно.</p>
 
         <div class="flt" data-v-in>
           <div class="flt__group" role="group" aria-label="Фильтр по цене">
@@ -274,53 +265,42 @@
             <span>Площадь</span>
             <button type="button" data-f="size" data-v="all" aria-pressed="true">Любая</button>
             <button type="button" data-f="size" data-v="s8" aria-pressed="false">от 8 соток</button>
-            <button type="button" data-f="size" data-v="s12" aria-pressed="false">от 12 соток</button>
+            <button type="button" data-f="size" data-v="s10" aria-pressed="false">от 10 соток</button>
           </div>
-          <p class="flt__count" aria-live="polite">Подобрано: <b id="flt-count">4</b> из 4</p>
+          <p class="flt__count" aria-live="polite">Подобрано: <b id="flt-count">3</b> из 3</p>
         </div>
 
         <ul class="uch" id="uch-list" data-v-in data-v-stagger="60">
           <li data-price="do25" data-size="s8">
             <figure><img src="assets/uch-1.webp" srcset="assets/uch-1-800.webp 800w, assets/uch-1.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Ровный участок на опушке соснового леса с красными граничными столбиками" width="1200" height="900" loading="lazy" decoding="async"><span>У леса</span></figure>
             <div class="uch__body">
-              <h3>Участок 12</h3>
-              <div class="uch__meta"><span>8 соток</span><span>свет у границы</span><span>лес за забором</span></div>
+              <h3>«Сосновый берег»</h3>
+              <div class="uch__meta"><span>47 км от МКАД</span><span>участки от 8 соток</span><span>свет и дороги</span></div>
               <div class="uch__row">
-                <p class="uch__price">1 850 000 ₽<span>за участок</span></p>
-                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+                <p class="uch__price">от 1 850 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%A1%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%C2%BB" target="_blank" rel="noopener">Подробнее</a>
               </div>
             </div>
           </li>
-          <li data-price="25-35" data-size="s8">
+          <li data-price="25-35" data-size="s10">
             <figure><img src="assets/uch-2.webp" srcset="assets/uch-2-800.webp 800w, assets/uch-2.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Открытый участок на опушке с молодыми берёзами по границе" width="1200" height="900" loading="lazy" decoding="async"><span>На опушке</span></figure>
             <div class="uch__body">
-              <h3>Участок 27</h3>
-              <div class="uch__meta"><span>10 соток</span><span>свет у границы</span><span>открытый вид</span></div>
+              <h3>«Берёзовая опушка»</h3>
+              <div class="uch__meta"><span>52 км от МКАД</span><span>участки от 10 соток</span><span>открытый вид на поле</span></div>
               <div class="uch__row">
-                <p class="uch__price">2 650 000 ₽<span>за участок</span></p>
-                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+                <p class="uch__price">от 2 900 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%91%D0%B5%D1%80%D1%91%D0%B7%D0%BE%D0%B2%D0%B0%D1%8F%20%D0%BE%D0%BF%D1%83%D1%88%D0%BA%D0%B0%C2%BB" target="_blank" rel="noopener">Подробнее</a>
               </div>
             </div>
           </li>
-          <li data-price="25-35" data-size="s12">
+          <li data-price="ot35" data-size="s10">
             <figure><img src="assets/uch-3.webp" srcset="assets/uch-3-800.webp 800w, assets/uch-3.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Участок у небольшого озера с причалом на соседнем участке" width="1200" height="900" loading="lazy" decoding="async"><span>У воды</span></figure>
             <div class="uch__body">
-              <h3>Участок 41</h3>
-              <div class="uch__meta"><span>12 соток</span><span>свет у границы</span><span>выход к озеру</span></div>
+              <h3>«Озёрный»</h3>
+              <div class="uch__meta"><span>58 км от МКАД</span><span>участки от 10 соток</span><span>выход к озеру</span></div>
               <div class="uch__row">
-                <p class="uch__price">3 200 000 ₽<span>за участок</span></p>
-                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
-              </div>
-            </div>
-          </li>
-          <li data-price="ot35" data-size="s12">
-            <figure><img src="assets/uch-4.webp" srcset="assets/uch-4-800.webp 800w, assets/uch-4.webp 1200w" sizes="(max-width: 860px) 100vw, 34rem" alt="Участок в середине поселка на улице с построенными домами" width="1200" height="900" loading="lazy" decoding="async"><span>В центре</span></figure>
-            <div class="uch__body">
-              <h3>Участок 8</h3>
-              <div class="uch__meta"><span>15 соток</span><span>свет у границы</span><span>асфальт у участка</span></div>
-              <div class="uch__row">
-                <p class="uch__price">4 600 000 ₽<span>за участок</span></p>
-                <a class="v-btn v-btn--ghost" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подробнее</a>
+                <p class="uch__price">от 3 450 000 ₽<span>за участок</span></p>
+                <a class="v-btn v-btn--ghost" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BE%D0%BA%20%C2%AB%D0%9E%D0%B7%D1%91%D1%80%D0%BD%D1%8B%D0%B9%C2%BB" target="_blank" rel="noopener">Подробнее</a>
               </div>
             </div>
           </li>
@@ -330,7 +310,7 @@
     </section>
 
     <!-- 4 · ДЕТАЛЬНАЯ УЧАСТКА -->
-    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="uchastok-12" aria-label="Участок 12: подробно">
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="uchastok-12" aria-label="Участок 12 в посёлке «Сосновый берег»">
       <div class="v-wrap">
         <div class="det">
           <figure class="det__fig" data-v-reveal="left" data-v-reveal-at="0.1 0.45">
@@ -338,7 +318,7 @@
           </figure>
           <div class="det__body">
             <div>
-              <span class="v-label">Участок 12 · пример карточки</span>
+              <span class="v-label">«Сосновый берег» · участок 12</span>
               <h2 class="v-display v-display--md" style="margin-top: var(--v-3)">8 соток на опушке леса</h2>
             </div>
             <p class="v-body v-soft">Прямоугольный, ровный участок. Сосновый лес начинается за границей - тень летом и никакой грязи весной. Соседи с двух сторон уже построились.</p>
@@ -346,12 +326,12 @@
               <li><b>Площадь</b><span>8 соток, 20 × 40 м, без уклона</span></li>
               <li><b>Коммуникации</b><span>электричество 15 кВт у границы; скважина и септик - на участке</span></li>
               <li><b>Подъезд</b><span>асфальт до участка, зимой чистят в первую очередь</span></li>
-              <li><b>Инфраструктура</b><span>школа и магазины в {{город}}, ~15 минут на машине</span></li>
-              <li><b>Документы</b><span>собственность, межевание выполнено, кадастр: {{кадастровый номер}}</span></li>
+              <li><b>Инфраструктура</b><span>школа и магазины в Истре, ~15 минут на машине</span></li>
+              <li><b>Документы</b><span>собственность, межевание выполнено, кадастровый номер 50:12:0070311:1234</span></li>
             </ul>
             <div class="uch__row">
               <p class="uch__price">1 850 000 ₽<span>цена фиксируется в договоре</span></p>
-              <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Записаться на просмотр</a>
+              <a class="v-btn" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BA%D0%B0%2012%20%D0%B2%20%C2%AB%D0%A1%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BE%D0%BC%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%D1%83%C2%BB" target="_blank" rel="noopener">Записаться на просмотр</a>
             </div>
           </div>
         </div>
@@ -359,13 +339,13 @@
     </section>
 
     <!-- 5 · О ПОСЕЛКЕ -->
-    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="poselok" aria-label="О поселке">
+    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="poselok" aria-label="О посёлке «Сосновый берег»">
       <div class="v-wrap">
         <div class="about">
           <div class="about__body">
             <div>
-              <span class="v-label">О поселке</span>
-              <h2 class="v-display v-display--md" style="margin-top: var(--v-3)">{{компания}} - посёлок, где уже живут</h2>
+              <span class="v-label">О посёлке</span>
+              <h2 class="v-display v-display--md" style="margin-top: var(--v-3)">«Сосновый берег» - посёлок, где уже живут</h2>
             </div>
             <p class="v-body v-soft">Планировка - кварталами, без «спального района» плотности: широкие улицы, свет вдоль дорог, общая зона отдыха у пруда. Каждый участок огорожен по границе - границы видны до покупки, не «на словах».</p>
             <ul class="infra" data-v-in data-v-stagger="50">
@@ -373,13 +353,16 @@
               <li>общая зона для барбекю</li>
               <li>освещение центральной улицы</li>
               <li>сезонный магазин у въезда</li>
-              <li>остановка маршрута до {{город}}</li>
+              <li>остановка маршрута до Истры</li>
               <li>соседский чат и старший по посёлку</li>
             </ul>
-            <div class="map" data-v-in><span>Карта поселка и схема участков -<br>сюда встаит {{карта}} от заказчика</span></div>
+            <div class="howget" data-v-in>
+              <b>Как доехать</b>
+              <p>47 км от МКАД по Новорижскому шоссе, далее 6 км по указателям «Сосновый берег». Офис продаж - первое здание у въезда, парковка у двери. Координаты для навигатора пришлём в WhatsApp.</p>
+            </div>
           </div>
           <figure class="about__fig" data-v-reveal="right" data-v-reveal-at="0.1 0.45">
-            <img src="assets/about.webp" srcset="assets/about-900.webp 900w, assets/about.webp 1600w" sizes="(max-width: 860px) 100vw, 44rem" alt="Центральная улица поселка с тротуаром и домами по сторонам" width="1600" height="1100" loading="lazy" decoding="async">
+            <img src="assets/about.webp" srcset="assets/about-900.webp 900w, assets/about.webp 1600w" sizes="(max-width: 860px) 100vw, 44rem" alt="Центральная улица посёлка с тротуаром и домами по сторонам" width="1600" height="1100" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
@@ -433,34 +416,29 @@
       </div>
     </section>
 
-    <!-- 8 · ОТЗЫВЫ (только настоящие, слоты; нет отзывов - секция убирается) -->
-    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="otzyvy" data-slot-optional aria-label="Отзывы покупателей">
-      <div class="v-wrap">
-        <span class="v-label" data-v-in>Отзывы</span>
-        <h2 class="v-display v-display--lg" data-v-in>Что говорят купившие</h2>
-        <ul class="reviews__grid" data-v-in data-v-stagger="70" style="margin-top: var(--v-5)">
-          <li><p>«{{отзыв 1}}»</p><p><b>{{имя 1}}</b> · {{когда 1}}</p></li>
-          <li><p>«{{отзыв 2}}»</p><p><b>{{имя 2}}</b> · {{когда 2}}</p></li>
-          <li><p>«{{отзыв 3}}»</p><p><b>{{имя 3}}</b> · {{когда 3}}</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 9 · КОНТАКТЫ -->
-    <section class="v-section" data-v-act="flow" data-v-drift="#f4f5f0" id="kontakty" aria-label="Контакты">
+    <!-- 8 · КОНТАКТЫ -->
+    <section class="v-section" data-v-act="flow" data-v-drift="#edf0e6" id="kontakty" aria-label="Контакты">
       <div class="v-wrap">
         <div class="fin">
           <div class="fin__body" data-v-in data-v-stagger="70">
             <span class="v-label">Контакты</span>
             <h2 class="v-display v-display--md">Приезжайте смотреть участки</h2>
-            <p class="v-body v-soft">Офис продаж - у въезда в посёлок. Перед выездом позвоните - встретим и покажем все свободные варианты за один раз.</p>
+            <p class="v-body v-soft">Офис продаж - у въезда в посёлок «Сосновый берег». Перед выездом позвоните или напишите - встретим и покажем все свободные варианты за один раз.</p>
             <div class="fin__meta">
-              <span><b>Адрес</b> {{адрес}}, {{город}}</span>
-              <span><b>Часы просмотров</b> {{часы}}, по предварительному звонку</span>
+              <span><b>Адрес</b> посёлок «Сосновый берег», офис продаж у въезда, Истринский район, Московская область</span>
+              <span><b>Часы просмотров</b> суббота и воскресенье, 10:00-18:00, по предварительному звонку</span>
             </div>
-            <a class="fin__tel" href="tel:{{телефон}}">{{телефон}}</a>
+            <a class="fin__tel" href="tel:+74951234567">+7 (495) 123-45-67</a>
             <div class="hero__cta">
-              <a class="v-btn" href="{{ссылка-заявки}}" target="_blank" rel="noopener">Подобрать участок</a>
+              <a class="v-btn" href="https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BE%D0%BA%20%D0%B2%20%D0%BF%D0%BE%D1%81%D1%91%D0%BB%D0%BA%D0%B5" target="_blank" rel="noopener">Написать в WhatsApp</a>
+            </div>
+            <div class="mgr">
+              <img src="assets/manager.webp" alt="Дмитрий Соколов - менеджер по продажам посёлка «Сосновый берег»" width="72" height="72">
+              <div>
+                <b>Дмитрий Соколов</b>
+                <span>менеджер по продажам, работает с посёлками с 2019 года</span>
+                <span>отвечает в WhatsApp ежедневно с 9:00 до 21:00</span>
+              </div>
             </div>
           </div>
           <form class="form" data-v-in data-v-in-self onsubmit="return false" aria-label="Заявка на просмотр">
@@ -468,14 +446,14 @@
             <label>Имя<input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
             <label>Телефон<input type="tel" name="phone" autocomplete="tel" placeholder="+7 ___ ___-__-__"></label>
             <label>Что ищете<select name="wish"><option>Участок до 2,5 млн</option><option>Участок 2,5 - 3,5 млн</option><option>Участок от 3,5 млн</option><option>Просто посмотреть посёлок</option></select></label>
-            <button class="v-btn" type="submit" onclick="window.open('{{ссылка-заявки}}','_blank')">Отправить заявку</button>
-            <small>Нажимая «Отправить заявку», вы переходите в мессенджер - там продолжим разговор. Или просто позвоните: {{телефон}}.</small>
+            <button class="v-btn" type="submit" onclick="window.open('https://wa.me/74951234567?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%20%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%BA%D0%BE%D0%B2','_blank')">Отправить заявку</button>
+            <small>Нажимая «Отправить заявку», вы переходите в WhatsApp - там продолжим разговор. Или просто позвоните: +7 (495) 123-45-67.</small>
           </form>
         </div>
         <footer class="foot">
-          <span>{{компания}} · {{город}}</span>
-          <span data-slot-optional>{{юрлицо}} · ИНН {{ИНН}}</span>
-          <span>Продажа участков в коттеджном посёлке</span>
+          <span>ООО «Земля Подмосковья» · ИНН 5027165432</span>
+          <span>Истринский район, Московская область</span>
+          <span>Продажа участков в коттеджных посёлках</span>
         </footer>
       </div>
     </section>
@@ -504,12 +482,12 @@
       size: function (v, s) {
         if (s === 'all') return true;
         var n = parseFloat(v.replace(',', '.')) || 0;
-        return s === 's8' ? n >= 8 : n >= 12;
+        return s === 's8' ? n >= 8 : n >= 10;
       }
     };
-    // площадь храним в сотках: берём из подписи «N соток» в .uch__meta
+    // площадь храним в сотках: берём из подписи «участки от N соток» в .uch__meta
     cards.forEach(function (li) {
-      var m = (li.querySelector('.uch__meta span') || {}).textContent || '';
+      var m = (li.querySelector('.uch__meta span:nth-child(2)') || li.querySelector('.uch__meta span') || {}).textContent || '';
       li.dataset.sizeV = (m.match(/(\d+[.,]?\d*)/) || [0, '0'])[1];
     });
     function apply() {
